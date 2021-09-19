@@ -27,16 +27,6 @@ async function findAssociatedTokenAddress(
     ))[0];
 }
 
-class Assignable {
-    constructor(properties) {
-        Object.keys(properties).map((key) => {
-            this[key] = properties[key];
-        });
-    }
-}
-
-class Metadata extends Assignable { }
-
 async function getNFTData(ownerAddress) {
     var connection = new solanaWeb3.Connection(
         solanaWeb3.clusterApiUrl('mainnet-beta'),
